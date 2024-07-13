@@ -1,0 +1,129 @@
+---
+layout: default
+---
+<style>
+  .initial-content {
+    height: 100vh; /* Adjust this as needed */
+    width: 100%; /* This ensures it takes the full width */
+  }
+  .mainView {
+    position: relative; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    height: 100vh; /* Adjust this as needed */
+    width: 100%; /* This ensures it takes the full width */
+    max-width: 1236px; /* Maximum width set */
+    margin: 0 auto;
+  }
+  h1 {
+    text-align: left;
+    position: absolute;
+    top: 50px;
+    left: 0;
+    color: #6f777d;
+    z-index: 1;
+    margin-left: 20px;
+  }
+  iframe {
+    border: none;
+    position: relative;
+    z-index: 0;
+    min-width: 400px;
+    min-height: 400px;
+    width: 100%;
+    height: 100%;
+  }
+
+  .animated-text{
+    font-size: 50px;
+    font-weight: 600;
+    min-width: 280px;
+}
+
+.animated-text span{
+    position: relative;
+}
+
+.animated-text span::before{
+    content: "coding projects";
+    color: #ff7f50;
+    animation: words 20s infinite;
+}
+
+.animated-text span::after{
+    content: "";
+    position: absolute;
+    width: calc(100% + 8px);
+    height: 100%;
+    background-color: #ffffff;
+    border-left: 2px solid #ff7f50;
+    right: -8px;
+    animation: cursor .8s infinite, typing 20s steps(14) infinite;
+}
+
+@keyframes cursor {
+    to{
+        border-left: 2px solid #ff7f5000;
+    }
+}
+
+@keyframes words {
+    0%,25%{
+        content: "coding projects";
+    }
+    26%,50%{
+        content: "3D prints";
+    }
+    51%,75%{
+        content: "game dev. projects";
+    }
+    76%,100%{
+        content: "articles";
+    }
+}
+/* @keyframes words {
+    0%,20%{
+        content: "game dev. projects";
+    }
+    21%,40%{
+        content: "3D prints";
+    }
+    41%,60%{
+        content: "coding projects";
+    }
+    61%,80%{
+        content: "articles";
+    }
+    81%,100%{
+        content: "Gamer";
+    }
+} */
+
+@keyframes typing {
+    12%,19%,37%,44%,63%,70%,88%,95%{
+        width: 0;
+    }
+    6%,25%,36%,50%,56%,75%,81%{
+        width: calc(100% + 8px);
+    }
+}
+/* @keyframes typing {
+    10%,15%,30%,35%,50%,55%,70%,75%,90%,95%{
+        width: 0;
+    }
+    5%,20%,25%,40%,45%,60%,65%,80%,85%{
+        width: calc(100% + 8px);
+    }
+} */
+</style>
+<div class="mainView">
+  <h1 class="animated-text">A site for <span></span><br>by NickN</h1>
+  <iframe src="/assets/three/VoxelFrame/TimberFrame.html"></iframe>
+</div>
+
+
+{{ content }}
+
+</grid>
+

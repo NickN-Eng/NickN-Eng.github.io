@@ -1,0 +1,71 @@
+---
+---
+
+@import "{{ site.theme }}";
+
+//Increase the thickness of the bottom border
+//ORIGINAL: .masthead {position: relative;border-bottom: 1px solid #f2f3f3;-webkit-animation: intro 0.3s both;animation: intro 0.3s both;-webkit-animation-delay: 0.15s;animation-delay: 0.15s;z-index: 20;}
+.masthead {
+  border-bottom: 2px solid #E8E8E8;
+}
+
+//Increase the width of the page and reduce the padding on each side
+//Post pages
+//ORIGINAL: @media (min-width: 64em) { .page { float: inline-end; width: calc(100% - 200px); padding-inline-end: 200px; } }
+//ORIGINAL: @media (min-width: 80em) { .page { width: calc(100% - 300px); padding-inline-end: 300px; } }
+@media (min-width: 64em) {
+  .page {
+    float: inline-end;
+    width: calc(100% - 50px);
+    padding-inline-end: 50px;
+  }
+}
+@media (min-width: 80em) {
+  .page {
+    width: calc(100% - 100px);
+    padding-inline-end: 100px;
+  }
+}
+
+//Project page (archive)
+//ORIGINAL: @media (min-width: 64em) { .archive { float: inline-end; width: calc(100% - 200px); padding-inline-end: 200px; } }
+//ORIGINAL: @media (min-width: 80em) { .archive { width: calc(100% - 300px); padding-inline-end: 300px; } }
+@media (min-width: 64em) { .archive { float: inline-end; width: calc(100% - 50px); padding-inline-end: 50px; } }
+@media (min-width: 80em) { .archive { width: calc(100% - 100px); padding-inline-end: 100px; } }
+
+//Make the masthead white so that any backgrounds do not affect the navigation bar
+.masthead {
+  background: #fff;
+}
+
+// Classes for sub-navigation panel (added at the bottom of a page like SmileyPoop
+.subHeader {
+  font-size: 20px; /* Set font size to 30px */
+  background: none; /* Remove background */
+  border: none; /* Remove border */
+  color: inherit; /* Use the current text color */
+  padding-top: 5px; /* Add padding to the top */
+  padding-bottom: 5px; /* Add padding to the bottom */
+  padding-right: 10px; /* Add padding to the right */
+  padding-left: 10px; /* Add padding to the left */
+  margin: 0; /* Remove margin */
+}
+.subButton {
+  font-size: 20px; /* Set font size to 30px */
+  background: none; /* Remove background */
+  border: none; /* Remove border */
+  color: inherit; /* Use the current text color */
+  padding-top: 5px; /* Add padding to the top */
+  padding-bottom: 5px; /* Add padding to the bottom */
+  padding-right: 10px; /* Add padding to the right */
+  padding-left: 10px; /* Add padding to the left */
+  margin: 0; /* Remove margin */
+}
+.sub-navigation-panel {
+  text-align: right; /* Right-align all contents */
+  width: 100%; /* Make navigation-panel take up the full width */
+  display: flex; /* Enable flexbox */
+  flex-direction: row;
+  align-items: center; /* Align items vertically in the center */
+  justify-content: center; /* Align items horizontally to the start */
+}
