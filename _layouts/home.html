@@ -17,6 +17,7 @@ layout: default
     margin: 0 auto;
   }
   h1 {
+    font-size: 50px;
     text-align: left;
     position: absolute;
     top: 50px;
@@ -25,6 +26,19 @@ layout: default
     z-index: 1;
     margin-left: 20px;
   }
+
+  @media (max-width: 480px) {
+    h1 {
+        font-size: 40px; 
+    }
+  }
+
+  @media (max-width: 370px) {
+    h1 {
+        font-size: 30px; 
+    }
+  }
+
   iframe {
     border: none;
     position: relative;
@@ -36,7 +50,6 @@ layout: default
   }
 
   .animated-text{
-    font-size: 50px;
     font-weight: 600;
     min-width: 280px;
 }
@@ -116,9 +129,21 @@ layout: default
         width: calc(100% + 8px);
     }
 } */
+
+ /* Assuming you want the break under 600px screen width */
+@media (max-width: 500px) {
+  .breakBelowScreenWidth::before {
+    content: "\A";
+    white-space: pre;
+  }
+}
+
+.no-break {
+  white-space: nowrap;
+}
 </style>
 <div class="mainView">
-  <h1 class="animated-text">A site for <span></span><br>by NickN</h1>
+  <h1 class="animated-text">A site for <span class="no-break"></span><br>by NickN</h1>
   <iframe src="/assets/three/VoxelFrame/TimberFrame.html"></iframe>
 </div>
 

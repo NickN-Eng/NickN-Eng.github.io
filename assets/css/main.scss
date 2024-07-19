@@ -40,7 +40,7 @@
 
 // Classes for sub-navigation panel (added at the bottom of a page like SmileyPoop
 .subHeader {
-  font-size: 20px; /* Set font size to 30px */
+  font-size: 20px; 
   background: none; /* Remove background */
   border: none; /* Remove border */
   color: inherit; /* Use the current text color */
@@ -49,6 +49,7 @@
   padding-right: 10px; /* Add padding to the right */
   padding-left: 10px; /* Add padding to the left */
   margin: 0; /* Remove margin */
+  text-align: center; /* Center-align all contents */
 }
 .subButton {
   font-size: 20px; /* Set font size to 30px */

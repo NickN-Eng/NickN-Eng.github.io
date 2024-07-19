@@ -39,11 +39,30 @@ permalink: /projects/
   .project-content h2 {
     margin-top: 0;
   }
-
   .project-content p {
+    margin-top: 0;
+    margin-bottom: 0
+  }
+
+  /* .project-content p {
     margin-top: -2px;
     margin-bottom: -6px
+  } */
+
+@media (max-width: 500px) {
+  .project-image {
+    margin-right: 0;
   }
+  .project-item {
+    flex-direction: column;
+  }
+  .project-content {
+    text-align: center;
+  }
+  .project-content h2, .project-content p {
+    width: 100%; /* Ensure full width for proper centering */
+  }
+}
 </style>
 <script>
 window.onload = function() {
