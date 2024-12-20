@@ -1,6 +1,8 @@
 main:
-  - title: "Projects"
+  - title: "Code Projects"
     url: /projects/
+  - title: "3d Prints"
+    url: /3dprints/
   - title: "Posts"
     url: /posts/
   - title: "Categories"

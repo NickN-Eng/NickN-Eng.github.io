@@ -43,5 +43,5 @@ Alongside his engineering projects, he also has a passion for <strong>coding</st
 <br>
 Post-chartership, Nick has been working as a <strong>computational designer</strong>, developing scripts and apps with a focus on design automation, sustainability and exploring uses of AI within AEC.<br>
 <br>
-Aside from his engineering career, he is a <strong>3d printing hobbyist</strong> and enjoys working on design and make projects which can be found <a href="/categories/#3dprints">here</a>.</p>
+Aside from his engineering career, he is a <strong>3d printing hobbyist</strong> and enjoys working on design and make projects which can be found <a href="/3dprints/">here</a>.</p>
 </div>
