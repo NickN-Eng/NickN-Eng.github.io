@@ -50,7 +50,7 @@ Drop emojis onto the screen, connecting identical emojis to merge and make them 
 </a>
 
 <div style="display: flex; flex-wrap: wrap; flex-direction: row; width: 100%; max-width: 100%; justify-content: center; gap: 12px;">
-    <img class="gameImage" src="{{ '/assets/images/Smiley-Poop/Screenshot1.png' | relative_url }}" alt="Screenshot 1" style="width: 300px;">
+    <img class="gameImage" src="{{ '/assets/images/Smiley-Poop/Screenshot5.png' | relative_url }}" alt="Screenshot 1" style="width: 300px;">
     <img class="gameImage" src="{{ '/assets/images/Smiley-Poop/Screenshot2.png' | relative_url }}" alt="Screenshot 2" style="width: 300px;">
     <img class="gameImage" src="{{ '/assets/images/Smiley-Poop/Screenshot3.png' | relative_url }}" alt="Screenshot 3" style="width: 300px;">
     <img class="gameImage" src="{{ '/assets/images/Smiley-Poop/Screenshot4.png' | relative_url }}" alt="Screenshot 4" >
