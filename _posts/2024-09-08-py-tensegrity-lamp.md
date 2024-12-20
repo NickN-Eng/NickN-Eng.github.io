@@ -9,7 +9,7 @@ tags:
   - tensegrity
 ---
 
-A gift for a couple with initials P & Y. ♥♥♥
+A custom gift for a couple with initials P & Y. ♥♥♥
 <div style="text-align: center;">
   <img class="solo-round-img" src="{{ '/assets/images/3dprints/TensegrityLamp.gif' | relative_url }}" alt="A 360 degree animation of the PY tensegrity lamp" style="width: 400px;">
 </div>
