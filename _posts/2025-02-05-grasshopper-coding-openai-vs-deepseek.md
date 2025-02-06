@@ -54,10 +54,12 @@ None of the models fully achieved the correct solution above. In fact, Claude So
 
 **Key observations:**
 
-- A roof slab was not assumed by any model, and needs to be explicitly stated in future. Only OpenAI o1 included a roof as a fluke in 1 of 4 attempts.
-- o3-mini demonstrated the most reliable inference for column grid alignment, with errors in only 1 out of 4 attempts. DeepSeek R1 and o1 made this mistake in 2 out of 4 instances.
-- o3-mini performed the best overall, with the lowest average error count (1.2 average). It was also the only model to produce error-free code on the first attempt in two of four cases.
-- o1 exhibited the most variation, often adopting different approaches, leading to inconsistencies.
+- Both OpenAI o3-mini and DeepSeek R1 managed to **understand the prompt well**, with equally few mistakes in the generated geometry.
+- **OpenAI o3-mini performed best**, with the fewest c# compilation errors. It was the only model to produce syntactically correct code on the initial attempt in 2/4 times. This demonstrates a good knowledge of the RhinoCommon API and appears to be the best model for Rhino/Grasshopper coding.
+- **DeepSeek R1 was a close 2nd**, falling short only due to a few code errors which it could self correct.
+- **OpenAI o1 was 3rd**, producing more code errors and was prone to misunderstanding the brief with incorrect slab geometry and a misaligned grid. However, these errors would have been fixable with further prompting.
+- **Claude Sonnet 3.5 struggled significantly**, and would have required manual intervention to get the code working
+- None of the models realised that **a roof slab is required**, highlighting limitations in implicit knowledge and the importance of precise prompts.
 
 **Performance Breakdown:**
 
