@@ -13,7 +13,7 @@ tags:
 With the release of OpenAI’s o3-mini and DeepSeek R1, I wanted to evaluate how these models compare to the established options—Claude Sonnet 3.5 and ChatGPT o1—specifically for coding Grasshopper script components.
 
 <div style="text-align: center;">
-  <img class="solo-round-img" src="{{ '/assets/images/blog\grasshopper_coding_llm\ScriptComponent.png' | relative_url }}" alt="LLMs and script component" style="width: 500px;">
+  <img class="solo-round-img" src="{{ '/assets/images/blog/grasshopper_coding_llm/SummaryImage.png' | relative_url }}" alt="LLMs and script component" style="width: 800px;">
 </div>
 
 # The Challenge
@@ -30,7 +30,7 @@ The models were given a prompt outlining a task **create analytical geometry** o
 The key inputs include a 2D rectangular curve defining the slab edge,  2D lines defining the core walls and numerical inputs including: storey height and the column grid distances in the X and Y directions:
 
 <div style="text-align: center;">
-  <img class="solo-round-img" src="{{ '/assets/images/blog\grasshopper_coding_llm\Input.png' | relative_url }}" alt="inputs and result" style="width: 500px;">
+  <img class="solo-round-img" src="{{ '/assets/images/blog/grasshopper_coding_llm/Input.png' | relative_url }}" alt="inputs and result" style="width: 500px;">
 </div>
 
 A key challenge was that the rectangular slab edge could be **at any rotation**. The model needed to infer that column gridlines aligned with the rotation of the rectangular slab would be appropriate, based on limited instructions. Additionally, I did not explicitly specify that the building should **include a roof**, but that should be obvious right?
