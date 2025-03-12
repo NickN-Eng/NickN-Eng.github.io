@@ -10,7 +10,7 @@ tags:
   - engineering
 ---
 
-**Topic:** This post explores creating a concrete engineering knowledge assistant using Large Language Models (LLMs). It compares OpenAI's Custom GPTs and Obsidian's AI Copilot in addressing technical questions about concrete design.
+> This post explores the feasibility of creating an AI assistant specialised in concrete engineering using Large Language Models (LLMs). It compares OpenAI's Custom GPTs and Obsidian's AI Copilot in answering technical questions about concrete design.
 
 In structural engineering, there is a vast amount of technical knowledge available to assist engineers, but there is too much to absorb. Solutions to many engineering challenges are well-documented, but finding them is often hindered by time constraints and limitations inherent in traditional keyword-based searches.
 
@@ -22,17 +22,17 @@ To bridge this gap, I evaluated two readily available personal-use tools: OpenAI
 
 The aim of this experiment was to develop a chatbot capable of providing expert-level answers regarding concrete design and assessment, comparing its effectiveness against the baseline provided by ChatGPT-4o.
 
-To enhance the engineering knowledge for my two test solutions, I incorporated 40+ documents relating to concrete design and assessment, including:
+To enhance the engineering knowledge for my two test solutions, I incorporated 60+ documents relating to concrete design and assessment, including:
 
 - Eurocodes and British Standards
 - Design guides from institutions like the IStructE and TCC
 - Technical notes on specific concrete topics such as cracking, shrinkage, and movement joints
 
-I posed technical questions that typically cannot be resolved with basic keyword searches, for instance:
+To evaluate each system's capacity to handle practical, nuanced queries, I posed technical questions that typically cannot be resolved with basic keyword searches, such as:
 
 > I am designing a concrete column using C50/60 concrete in a slab of C32/40. What considerations should I account for?
 
-I also assessed whether the LLMs could accurately interpret and apply formulas and tabular data from the provided documents by asking more analytical questions such as:
+I also assessed whether the LLMs could accurately interpret and apply formulas and tabular data from the provided documents by asking more analytical questions like:
 
 > For an 8x8 meter concrete slab, what thickness is required to support a residential load of 2.5 kPa, including a 50 mm screed superimposed dead load and typical service loads?
 
@@ -40,7 +40,7 @@ I also assessed whether the LLMs could accurately interpret and apply formulas a
 
 ## Benchmark: ChatGPT-4o Limitations
 
-Using ChatGPT-4o (with web search) as a baseline, I found that the model predominantly drew information from web articles and forums (e.g., eng-tips.com, concrete.org.uk), lacking access to licensed authoritative documents.
+Using ChatGPT-4o (with web search) as a baseline, I found that the model predominantly drew information from web articles and forums (e.g., eng-tips.com, concrete.org.uk), since it lacked access to licensed authoritative documents.
 
 Responses varied notably in quality, referencing different sources for identical queries. Additionally, the absence of consistent guidance from reputable institutions reduced the reliability of provided information.
 
@@ -52,10 +52,12 @@ Answers were frequently vague or incorrect, lacking detailed technical recommend
 
 ## OpenAI Custom GPTs
 
-OpenAI's Custom GPT platform enables users to create tailored chatbot versions of ChatGPT by defining specific instructions and uploading relevant documents.. For my experiment, I uploaded 20 concrete-focused PDF documents.
+Given ChatGPT-4o’s limitations, I explored OpenAI's Custom GPT as an alternative specialised solution.
+
+OpenAI's Custom GPT platform enables users to create tailored chatbot versions of ChatGPT by defining specific instructions and uploading relevant documents. For my experiment, I uploaded 20 concrete-focused PDF documents, as shown below.
 
 <div style="text-align: center;">
-  <img class="solo-round-img" src="{{ '/assets/images/blog/engineering_llm/EngLLM_CustomGPT_Setup.png' | relative_url }}" alt="A typical ChatGPT 4o response to an engineering query" style="width: 1000px;">
+  <img class="solo-round-img" src="{{ '/assets/images/blog/engineering_llm/EngLLM_CustomGPT_Setup.png' | relative_url }}" alt="Setting up a Custom GPT for engineering queries" style="width: 1000px;">
 </div>
 
 Note: Using Custom GPTs requires a ChatGPT Plus subscription costing $20/month.
@@ -68,23 +70,25 @@ Note: Using Custom GPTs requires a ChatGPT Plus subscription costing $20/month.
 **Limitations:**
 
 - Restricted to 20 documents, necessitating careful selection or merging of resources.
-- Inconsistent referencing back to source documents, especially for merged materials, complicating validation and further research.
+- Inconsistent referencing back to source documents, especially for merged materials, complicating validation and further research. For example, the response below does not mention the TCC scheme design guide which would have the source for the valid recommendation of 225-250mm.
 
 <div style="text-align: center;">
-  <img class="solo-round-img" src="{{ '/assets/images/blog/engineering_llm/EngLLM_CustomGPT_8x8SlabThickness.png' | relative_url }}" alt="A typical ChatGPT 4o response to an engineering query" style="width: 600px;">
+  <img class="solo-round-img" src="{{ '/assets/images/blog/engineering_llm/EngLLM_CustomGPT_8x8SlabThickness.png' | relative_url }}" alt="Custom GPT response for slab thickness calculation" style="width: 600px;">
 </div>
 
 ## Obsidian with AI Copilot
 
-Obsidian, a flexible markdown-based note-taking app, integrates an AI assistant through the Copilot plugin, enabling the assistant to answer questions directly from stored notes.
+Given OpenAI Custom GPT's difficulties with viewing the source material for each response, I was given the idea to look for an app designed to store and manage text documents as a starting point.
 
-The markdown format required converting engineering PDFs into markdown files using a Python script capable of handling complex tables and formulas. This conversion incurred approximately £2 in Google Cloud credits for about 60 varied-size documents. The detailed conversion process and script could be covered in a future post if readers express interest.
+Obsidian is a flexible markdown-based note-taking app which integrates an AI assistant through the Copilot plugin, enabling the assistant to answer questions based on the stored notes.
+
+Obsidian's text markdown format is used extensively in programming circles for documentation, but it required the additional step of converting engineering PDFs into markdown files. For this purpose, I developed a Python script capable of handling complex tables and formulas using the `marker-pdf` Python library. This conversion incurred approximately £2 in Google Cloud credits for about 60 varied-size documents. The conversion process and script could be shared in a future post if readers express interest.
 
 <div style="text-align: center;">
-  <img class="solo-round-img" src="{{ '/assets/images/blog/engineering_llm/EngLLM_Obsidian_AppView.png' | relative_url }}" alt="A typical ChatGPT 4o response to an engineering query" style="width: 1000px;">
+  <img class="solo-round-img" src="{{ '/assets/images/blog/engineering_llm/EngLLM_Obsidian_AppView.png' | relative_url }}" alt="Obsidian AI Copilot view" style="width: 1000px;">
 </div>
 
-Copilot for Obsidian supports multiple LLM providers through API keys, on a pay-per-use basis. I utilised Google's Gemini 2, which is both more cost-effective and offers a larger context window than OpenAI’s ChatGPT-4o.
+Copilot for Obsidian supports multiple LLM providers through API keys, on a pay-per-use basis. I utilised Google's Gemini 2 model, which is both more cost-effective and offers a larger context window than OpenAI’s ChatGPT-4o.
 
 **Benefits:** In addition to the knowledge and relevance characteristics demonstrated by ChatGPT's Custom GPTs, Obsidian with Copilot also had the following benefits:
 
@@ -94,13 +98,22 @@ Copilot for Obsidian supports multiple LLM providers through API keys, on a pay-
 
 **Limitations:**
 
-- Occasional inaccuracies on analysis questions. For example there were some errors regarding loading assumptions (e.g., screed and service loads).
+- Occasional inaccuracies on analysis questions. For example, there were some errors regarding loading assumptions (e.g., screed and service loads).
 - Performance implications when scaled beyond individual usage to enterprise-level document volumes due to reliance on local file storage rather than databases.
+
 <div style="text-align: center;">
-  <img class="solo-round-img" src="{{ '/assets/images/blog/engineering_llm/EngLLM_Obsidian_CoverQuestion.png' | relative_url }}" alt="A typical ChatGPT 4o response to an engineering query" style="width: 800px;">
+  <img class="solo-round-img" src="{{ '/assets/images/blog/engineering_llm/EngLLM_Obsidian_CoverQuestion.png' | relative_url }}" alt="Obsidian AI Copilot response for concrete cover calculation" style="width: 800px;">
 </div>
 
 ## Key takeaways
+
+| Feature                  | ChatGPT-4o | Custom GPTs  | Obsidian (w/ Gemini 2)           |
+| ------------------------ | ---------- | ------------ | -------------------------------- |
+| Authoritative References | Weak       | Good         | Excellent (with clickable links) |
+| Document Limitations     | N/A        | 20-doc limit | Local storage dependent          |
+| Technical accuracy       | Variable   | Good         | Excellent (tables/analysis)      |
+| Cost                     | Free       | $20/month    | Pay-per-use (low cost)           |
+| Setup complexity         | Low        | Low-medium   | Medium-high                      |
 
 Both OpenAI Custom GPTs and Obsidian Copilot with Gemini 2 effectively integrate specialized engineering knowledge into LLM-based assistants. Key findings:
 
@@ -117,4 +130,4 @@ Both OpenAI Custom GPTs and Obsidian Copilot with Gemini 2 effectively integrate
 - Flexibility with multiple LLM providers offering stronger analytical capabilities (Gemini 2 pro).
 - Better data extraction from complex formats like tables, potentially due to my more robust document conversion workflow.
 
-Overall, each solution has it's use case, but I was particularly impressed by the ability of Gemini 2 pro's ability to apply engineering knowledge and perform some basic calculations / interpretation.
+Overall, each solution has it's use case, but I was particularly impressed by the ability of Gemini 2 pro's ability to apply engineering knowledge and perform some basic calculations / interpretation. Meanwhile, engineers prioritising ease of setup might lean towards OpenAI Custom GPTs.
